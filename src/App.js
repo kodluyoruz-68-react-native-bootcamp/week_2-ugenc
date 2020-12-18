@@ -15,26 +15,9 @@ import TodoHeader from './components/TodoHeader';
  * TouchableOpacity: testID="button" (component which is saves the todo to list)
  * FlatList: testID="list" (list of todo)
  */
-const notes = [
-  {
-    id: '0',
-    title: 'İki Ekmek Al',
-    isDone: false,
-  },
-  {
-    id: '1',
-    title: 'React Native ödevini yap',
-    isDone: true,
-  },
-  {
-    id: '3',
-    title: 'JS çalış',
-    isDone: true,
-  },
-];
 
 function App() {
-  const [todos, setTodos] = useState(notes);
+  const [todos, setTodos] = useState([]);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
