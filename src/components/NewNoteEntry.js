@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 
 export default function NewNoteEntry({handleSubmit}) {
-  const [newItem, setNewItem] = useState([]);
   const [inputText, setInputText] = useState('');
 
   return (
