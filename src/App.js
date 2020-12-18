@@ -43,12 +43,14 @@ function App() {
   }, [todos]);
 
   function addItem(newText) {
-    const newItem = {
-      id: Math.floor(Math.random() * 10000).toString(),
-      title: newText,
-      isDone: false,
-    };
-    setTodos([newItem, ...todos]);
+    if (newText.length !== 0) {
+      const newItem = {
+        id: Math.floor(Math.random() * 10000).toString(),
+        title: newText,
+        isDone: false,
+      };
+      setTodos([newItem, ...todos]);
+    }
   }
 
   const changeDoneState = (id) => {
