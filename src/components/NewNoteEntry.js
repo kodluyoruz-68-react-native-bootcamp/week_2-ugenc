@@ -14,12 +14,14 @@ export default function NewNoteEntry({handleSubmit}) {
   return (
     <View style={styles.noteContainer}>
       <TextInput
+        testID="input"
         placeholder="pour your mind here"
         onChangeText={(text) => setInputText(text)}
         value={inputText}
         style={styles.textInput}
       />
       <TouchableOpacity
+        testID="button"
         style={styles.buttonContainer}
         onPress={() => {
           handleSubmit(inputText);

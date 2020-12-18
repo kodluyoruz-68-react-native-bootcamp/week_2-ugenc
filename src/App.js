@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   View,
-  Text,
-  TextInput,
   StyleSheet,
   KeyboardAvoidingView,
   FlatList,
@@ -90,6 +88,7 @@ function App() {
         enabled>
         <View style={styles.notesContainer}>
           <FlatList
+            testID="list"
             ListHeaderComponent={<TodoHeader count={count} />}
             data={todos}
             keyExtractor={(item) => item.id}
