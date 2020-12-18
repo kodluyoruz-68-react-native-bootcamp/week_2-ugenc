@@ -21,7 +21,7 @@ export default function NoteItem({item, handleLongPress, handlePress}) {
 const styles = StyleSheet.create({
   noteContainer: {
     marginVertical: 10,
-    marginHorizontal: 10,
+    marginHorizontal: 20,
     paddingHorizontal: 20,
     paddingVertical: 20,
     borderRadius: 15,

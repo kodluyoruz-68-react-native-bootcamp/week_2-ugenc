@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   View,
@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import NewNoteEntry from './components/NewNoteEntry';
 import NoteItem from './components/NoteItem';
+import TodoHeader from './components/TodoHeader';
 
 /**
  * TextInput: testID="input" (component which is user types the todo text)
@@ -36,6 +37,12 @@ const notes = [
 
 function App() {
   const [todos, setTodos] = useState(notes);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const countOfDone = todos.filter((todo) => todo.isDone === false).length;
+    setCount(countOfDone);
+  }, [todos]);
 
   function addItem(newText) {
     const newItem = {
@@ -83,6 +90,7 @@ function App() {
         enabled>
         <View style={styles.notesContainer}>
           <FlatList
+            ListHeaderComponent={<TodoHeader count={count} />}
             data={todos}
             keyExtractor={(item) => item.id}
             renderItem={renderNote}
