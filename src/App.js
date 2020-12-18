@@ -9,6 +9,7 @@ import {
 import NewNoteEntry from './components/NewNoteEntry';
 import NoteItem from './components/NoteItem';
 import TodoHeader from './components/TodoHeader';
+import TodoEmpty from './components/TodoEmpty';
 
 /**
  * TextInput: testID="input" (component which is user types the todo text)
@@ -75,6 +76,7 @@ function App() {
           <FlatList
             testID="list"
             ListHeaderComponent={<TodoHeader count={count} />}
+            ListEmptyComponent={<TodoEmpty />}
             data={todos}
             keyExtractor={(item) => item.id}
             renderItem={renderNote}
