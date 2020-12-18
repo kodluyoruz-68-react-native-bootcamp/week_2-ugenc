@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Keyboard,
 } from 'react-native';
 
 export default function NewNoteEntry({handleSubmit}) {
@@ -25,6 +26,7 @@ export default function NewNoteEntry({handleSubmit}) {
         onPress={() => {
           handleSubmit(inputText);
           setInputText('');
+          Keyboard.dismiss();
         }}>
         <Text style={styles.buttonText}>+</Text>
       </TouchableOpacity>
