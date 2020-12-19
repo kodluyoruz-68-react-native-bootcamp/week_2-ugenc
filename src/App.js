@@ -38,16 +38,21 @@ function App() {
   }
 
   const changeDoneState = (id) => {
-    var updatedTodos = todos.map((todo) =>
-      todo.id === id
-        ? {
-            ...todo,
-            isDone: !todo.isDone,
-          }
-        : todo,
-    );
+    // var updatedTodos = todos.map((todo) =>
+    //   todo.id === id
+    //     ? {
+    //         ...todo,
+    //         isDone: !todo.isDone,
+    //       }
+    //     : todo,
+    // );
 
-    setTodos(updatedTodos);
+    // setTodos(updatedTodos);
+
+    const index = todos.findIndex((todo) => todo.id == id);
+    const newArray = [...todos];
+    newArray[index].isDone = !todos[index].isDone;
+    setTodos([...newArray]);
   };
 
   const deleteItem = (id) => {
